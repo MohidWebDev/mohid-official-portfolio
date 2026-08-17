@@ -45,7 +45,7 @@ export const Contact: React.FC = () => {
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("hello@architect.io");
+    navigator.clipboard.writeText("mmohid069@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -97,7 +97,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-slate-300 font-mono text-sm sm:text-base group-hover:text-cyan-300 transition-colors">
-                    hello@architect.io
+                    mmohid069@gmail.com
                   </span>
                   {copiedEmail ? (
                     <span className="text-xs text-emerald-400 font-medium flex items-center gap-1">
@@ -118,7 +118,7 @@ export const Contact: React.FC = () => {
                   <MapPin size={18} />
                 </div>
                 <span className="text-slate-300 font-mono text-sm sm:text-base">
-                  San Francisco, CA
+                  Lahore, Punjab, PK
                 </span>
               </div>
             </div>
@@ -126,7 +126,7 @@ export const Contact: React.FC = () => {
             {/* Social Link Buttons */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://github.com"
+                href="https://github.com/MohidWebDev"
                 target="_blank"
                 rel="noreferrer"
                 id="social-github-btn"
@@ -136,7 +136,7 @@ export const Contact: React.FC = () => {
                 <Github size={19} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mohid-yaseen-eng-dev/"
                 target="_blank"
                 rel="noreferrer"
                 id="social-linkedin-btn"

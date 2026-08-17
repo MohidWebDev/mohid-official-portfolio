@@ -28,13 +28,13 @@ export const Footer: React.FC = () => {
 
         {/* Center Copyright */}
         <div className="text-slate-400 text-center font-mono text-xs">
-          © {currentYear} Mohid Yaseen. Built with Precision.
+          © {currentYear} Mohid Yaseen Portfolio. Built with Precision.
         </div>
 
         {/* Right Links */}
         <div className="flex items-center space-x-6 text-slate-400 font-mono text-xs sm:text-sm">
           <a
-            href="https://github.com"
+            href="https://github.com/MohidWebDev"
             target="_blank"
             rel="noreferrer"
             className="hover:text-cyan-400 transition-colors"
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
             Github
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/mohid-yaseen-eng-dev/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-cyan-400 transition-colors"

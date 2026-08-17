@@ -109,7 +109,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "university",
     role: "B.S. Computer Science",
     company: "University of Central Punjab (UCP)",
-    period: "2022 - 2026",
+    period: "Feb 2022 - Feb 2026",
     description:
       "Completed a Bachelor's degree in Computer Science with a focus on full-stack web development. Built practical experience through internships spanning ERP systems and modern MERN stack development.",
   },
