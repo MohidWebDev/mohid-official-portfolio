@@ -81,28 +81,36 @@ export const FEATURED_PROJECTS: Project[] = [
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    id: "techcorp",
-    role: "Senior Full-Stack Engineer",
-    company: "TechCorp Inc.",
-    period: "2021 - Present",
+    id: "axcel",
+    role: "MERN Stack Developer Intern",
+    company: "AXCEL",
+    period: "Jul 2026 - Present",
     description:
-      "Lead architect for core microservices. Reduced deployment times by 40% through CI/CD pipeline optimizations and spearheaded the migration to a fully serverless architecture on AWS.",
+      "Contributing to hands-on development using the MERN stack (MongoDB, Express.js, React.js, Node.js) at AXCEL, a company delivering AI automation, web & mobile development, UI/UX design, CRM integrations, and cloud DevOps solutions. Strengthening full-stack skills through real-world, weekly project assignments.",
     current: true,
   },
   {
-    id: "creative-solutions",
-    role: "Frontend Developer",
-    company: "Creative Solutions LLC",
-    period: "2018 - 2021",
+    id: "aj-codz",
+    role: "MERN Stack Developer Intern",
+    company: "AJ Codz",
+    period: "Jun 2026 - Aug 2026",
     description:
-      "Developed responsive, high-performance web interfaces using React and Redux. Collaborated closely with design teams to implement pixel-perfect, accessible UI components.",
+      "Developed TurfKhana, a fully automated web application enabling users to book turfs seamlessly, handling both front-end and back-end functionality using the MERN stack to deliver a smooth, end-to-end booking experience.",
+  },
+  {
+    id: "loftex",
+    role: "SAP ABAP Intern",
+    company: "Loftex Limited",
+    period: "Aug 2023 - Sep 2023",
+    description:
+      "Gained hands-on exposure to SAP's ABAP programming environment at Loftex Limited, a textile industry company, including writing and handling table queries for data retrieval and reporting. Built a foundational understanding of ERP systems and how backend development supports large-scale industrial operations.",
   },
   {
     id: "university",
     role: "B.S. Computer Science",
-    company: "University of Technology",
-    period: "2014 - 2018",
+    company: "University of Central Punjab (UCP)",
+    period: "2022 - 2026",
     description:
-      "Graduated with Honors. Specialized in Software Engineering and Distributed Systems. President of the University Coding Club.",
+      "Completed a Bachelor's degree in Computer Science with a focus on full-stack web development. Built practical experience through internships spanning ERP systems and modern MERN stack development.",
   },
 ];
