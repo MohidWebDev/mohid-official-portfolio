@@ -5,25 +5,44 @@ export const TECH_CATEGORIES: TechCategory[] = [
     id: "frontend",
     title: "Frontend",
     icon: "monitor",
-    skills: ["React / Next.js", "Tailwind CSS", "TypeScript"],
+    skills: [
+      "React / Next.js",
+      "JavaScript",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
   },
   {
     id: "backend",
     title: "Backend",
     icon: "server",
-    skills: ["Node.js / Express", "Python / FastAPI", "Go (Golang)"],
+    skills: [
+      "Node.js / Express",
+      "JavaScript",
+      "TypeScript",
+      "REST APIs",
+      "JWT / Auth",
+    ],
   },
   {
     id: "databases",
     title: "Databases",
     icon: "database",
-    skills: ["PostgreSQL", "MongoDB", "Redis"],
+    skills: ["MongoDB", "Mongoose", "Supabase (PostgreSQL)", "Firebase"],
   },
   {
     id: "devops",
     title: "DevOps & Tools",
     icon: "wrench",
-    skills: ["Docker & K8s", "AWS Solutions", "Git & CI/CD"],
+    skills: [
+      "Git & GitHub",
+      "Vercel",
+      "Postman",
+      "VS Code",
+      "Railway",
+      "Render",
+    ],
   },
 ];
 
