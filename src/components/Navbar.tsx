@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, ExternalLink, Code2 } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Menu, X, FileText, ExternalLink, Code2 } from "lucide-react";
 
 interface NavbarProps {
   onResumeClick: () => void;
@@ -8,13 +8,13 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onResumeClick }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['contact', 'experience', 'projects', 'stack', 'hero'];
+      const sections = ["contact", "experience", "projects", "stack", "hero"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -26,23 +26,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onResumeClick }) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Stack', href: '#stack', id: 'stack' },
-    { label: 'Projects', href: '#projects', id: 'projects' },
-    { label: 'Experience', href: '#experience', id: 'experience' },
-    { label: 'Contact', href: '#contact', id: 'contact' },
+    { label: "Stack", href: "#stack", id: "stack" },
+    { label: "Projects", href: "#projects", id: "projects" },
+    { label: "Experience", href: "#experience", id: "experience" },
+    { label: "Contact", href: "#contact", id: "contact" },
   ];
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     setMobileMenuOpen(false);
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -50,15 +53,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onResumeClick }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0d1117]/85 backdrop-blur-md border-b border-cyan-500/10 shadow-lg shadow-black/40 py-4'
-          : 'bg-[#0d1117]/60 backdrop-blur-sm py-5'
+          ? "bg-[#0d1117]/85 backdrop-blur-md border-b border-cyan-500/10 shadow-lg shadow-black/40 py-4"
+          : "bg-[#0d1117]/60 backdrop-blur-sm py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a
           href="#hero"
-          onClick={(e) => scrollToSection(e, '#hero')}
+          onClick={(e) => scrollToSection(e, "#hero")}
           className="group flex items-center gap-2 text-xl sm:text-2xl font-black tracking-wider text-white hover:text-cyan-400 transition-colors"
           id="nav-logo"
         >
@@ -76,18 +79,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onResumeClick }) => {
                 onClick={(e) => scrollToSection(e, link.href)}
                 className={`group relative py-1 text-sm font-medium transition-colors duration-200 ${
                   isActive
-                    ? 'text-cyan-400 font-semibold'
-                    : 'text-slate-400 hover:text-white'
+                    ? "text-cyan-400 font-semibold"
+                    : "text-slate-400 hover:text-white"
                 }`}
                 id={`nav-link-${link.id}`}
               >
                 <span>{link.label}</span>
                 {/* Horizontal accent line with neon glow */}
                 <span
-                  className={`absolute -bottom-1.5 left-0 h-[2px] w-full rounded-full bg-[#00f2fe] shadow-[0_0_8px_#00f2fe] transition-all duration-300 ease-out origin-center ${
+                  className={`absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-[#00f2fe] shadow-[0_0_8px_#00f2fe] transition-all duration-300 ease-out origin-center ${
                     isActive
-                      ? 'opacity-100 scale-x-100'
-                      : 'opacity-0 scale-x-0 group-hover:opacity-70 group-hover:scale-x-100'
+                      ? "opacity-100 scale-x-100"
+                      : "opacity-0 scale-x-0 group-hover:opacity-70 group-hover:scale-x-100"
                   }`}
                 />
               </a>
@@ -139,8 +142,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onResumeClick }) => {
                   onClick={(e) => scrollToSection(e, link.href)}
                   className={`text-base font-medium py-2.5 px-3.5 rounded-lg flex items-center justify-between transition-all ${
                     isActive
-                      ? 'text-cyan-400 bg-cyan-950/40 border-l-2 border-cyan-400 shadow-[0_0_12px_rgba(0,242,254,0.15)]'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+                      ? "text-cyan-400 bg-cyan-950/40 border-l-2 border-cyan-400 shadow-[0_0_12px_rgba(0,242,254,0.15)]"
+                      : "text-slate-300 hover:text-white hover:bg-slate-800/40"
                   }`}
                 >
                   <span>{link.label}</span>

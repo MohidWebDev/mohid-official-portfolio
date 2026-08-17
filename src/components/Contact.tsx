@@ -1,19 +1,30 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Mail, MapPin, Github, Linkedin, Send, CheckCircle, Copy, Check } from 'lucide-react';
-import { ContactFormState } from '../types';
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import {
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Send,
+  CheckCircle,
+  Copy,
+  Check,
+} from "lucide-react";
+import { ContactFormState } from "../types";
 
 export const Contact: React.FC = () => {
   const [form, setForm] = useState<ContactFormState>({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
@@ -28,13 +39,13 @@ export const Contact: React.FC = () => {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitted(false), 5000);
     }, 800);
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('hello@architect.io');
+    navigator.clipboard.writeText("hello@architect.io");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -42,13 +53,12 @@ export const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex items-center gap-3 mb-12"
         >
           <div className="text-cyan-400">
@@ -61,17 +71,18 @@ export const Contact: React.FC = () => {
 
         {/* Dual Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
           {/* Left Column: Direct Info & Social */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-5 flex flex-col justify-between space-y-8"
           >
             <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-              I'm currently open for new opportunities. Whether you have a project in mind, a question about my work, or just want to say hi, I'll try my best to get back to you!
+              I'm currently open for new opportunities. Whether you have a
+              project in mind, a question about my work, or just want to say hi,
+              I'll try my best to get back to you!
             </p>
 
             <div className="space-y-4">
@@ -93,7 +104,10 @@ export const Contact: React.FC = () => {
                       <Check size={14} /> Copied
                     </span>
                   ) : (
-                    <Copy size={13} className="text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <Copy
+                      size={13}
+                      className="text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
                   )}
                 </div>
               </div>
@@ -138,12 +152,11 @@ export const Contact: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="lg:col-span-7"
           >
             <div className="bg-[#161b22] border border-cyan-500/20 rounded-xl p-7 sm:p-9 shadow-[0_10px_35px_rgba(0,0,0,0.6)]">
-              
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">
                 Send a Message
               </h3>
@@ -151,16 +164,22 @@ export const Contact: React.FC = () => {
               {submitted ? (
                 <div className="py-8 px-4 bg-emerald-950/30 border border-emerald-500/30 rounded-lg text-center flex flex-col items-center justify-center space-y-3 animate-fadeIn">
                   <CheckCircle size={36} className="text-emerald-400" />
-                  <p className="text-white font-bold text-lg">Message Sent Successfully!</p>
+                  <p className="text-white font-bold text-lg">
+                    Message Sent Successfully!
+                  </p>
                   <p className="text-slate-400 text-sm max-w-sm">
-                    Thank you for reaching out. I'll get back to your inquiry as soon as possible.
+                    Thank you for reaching out. I'll get back to your inquiry as
+                    soon as possible.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Name Input */}
                   <div>
-                    <label htmlFor="name-input" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="name-input"
+                      className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2"
+                    >
                       Name
                     </label>
                     <input
@@ -177,7 +196,10 @@ export const Contact: React.FC = () => {
 
                   {/* Email Input */}
                   <div>
-                    <label htmlFor="email-input" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="email-input"
+                      className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2"
+                    >
                       Email
                     </label>
                     <input
@@ -194,7 +216,10 @@ export const Contact: React.FC = () => {
 
                   {/* Message Input */}
                   <div>
-                    <label htmlFor="message-input" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="message-input"
+                      className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2"
+                    >
                       Message
                     </label>
                     <textarea
@@ -214,10 +239,12 @@ export const Contact: React.FC = () => {
                     type="submit"
                     disabled={loading}
                     id="submit-contact-btn"
-                    className="w-full bg-gradient-to-r from-[#00f2fe] via-[#00e1fe] to-[#10b981] hover:opacity-90 text-slate-950 font-bold py-3.5 px-6 rounded-md transition-all duration-200 hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,242,254,0.3)] hover:shadow-[0_0_25px_rgba(0,242,254,0.45)] active:scale-[0.99] flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer disabled:opacity-50"
+                    className="w-full bg-linear-to-r from-[#00f2fe] via-[#00e1fe] to-[#10b981] hover:opacity-90 text-slate-950 font-bold py-3.5 px-6 rounded-md transition-all duration-200 hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,242,254,0.3)] hover:shadow-[0_0_25px_rgba(0,242,254,0.45)] active:scale-[0.99] flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer disabled:opacity-50"
                   >
                     {loading ? (
-                      <span className="inline-block animate-pulse">Sending message...</span>
+                      <span className="inline-block animate-pulse">
+                        Sending message...
+                      </span>
                     ) : (
                       <>
                         <span>Send Message</span>
@@ -227,12 +254,9 @@ export const Contact: React.FC = () => {
                   </button>
                 </form>
               )}
-
             </div>
           </motion.div>
-
         </div>
-
       </div>
     </section>
   );

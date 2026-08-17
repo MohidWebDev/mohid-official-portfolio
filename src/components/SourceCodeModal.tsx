@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
-import { X, Copy, Check, Code, Layers, FileCode2 } from 'lucide-react';
+import React, { useState } from "react";
+import { X, Copy, Check, Code, Layers, FileCode2 } from "lucide-react";
 
 interface SourceCodeModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const SourceCodeModal: React.FC<SourceCodeModalProps> = ({ isOpen, onClose }) => {
+export const SourceCodeModal: React.FC<SourceCodeModalProps> = ({
+  isOpen,
+  onClose,
+}) => {
   if (!isOpen) return null;
   const [copied, setCopied] = useState(false);
 
@@ -39,7 +42,6 @@ export const SourceCodeModal: React.FC<SourceCodeModalProps> = ({ isOpen, onClos
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-2xl bg-[#161b22] border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-950/50 flex flex-col overflow-hidden">
-        
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-[#0d1117]/95">
           <div className="flex items-center gap-3">
@@ -83,7 +85,10 @@ export const SourceCodeModal: React.FC<SourceCodeModalProps> = ({ isOpen, onClos
           </pre>
 
           <p className="text-xs text-slate-400 leading-relaxed">
-            Built with React 19, TypeScript, Tailwind CSS v4, and Lucide React icons. Features floating code cards with CSS keyframes, vertical glowing timelines, responsive grid systems, and glassmorphic navigation.
+            Built with React 19, TypeScript, Tailwind CSS v4, and Lucide React
+            icons. Features floating code cards with CSS keyframes, vertical
+            glowing timelines, responsive grid systems, and glassmorphic
+            navigation.
           </p>
         </div>
 
@@ -96,7 +101,6 @@ export const SourceCodeModal: React.FC<SourceCodeModalProps> = ({ isOpen, onClos
             Close
           </button>
         </div>
-
       </div>
     </div>
   );

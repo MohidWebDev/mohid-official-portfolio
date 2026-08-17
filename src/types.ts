@@ -17,7 +17,7 @@ export interface TechItem {
 export interface TechCategory {
   id: string;
   title: string;
-  icon: 'monitor' | 'server' | 'database' | 'wrench';
+  icon: "monitor" | "server" | "database" | "wrench";
   skills: string[];
 }
 
@@ -33,7 +33,7 @@ export interface ExperienceItem {
 export interface SocialLink {
   label: string;
   href: string;
-  icon: 'github' | 'linkedin' | 'code' | 'briefcase' | 'mail';
+  icon: "github" | "linkedin" | "code" | "briefcase" | "mail";
 }
 
 export interface ContactFormState {

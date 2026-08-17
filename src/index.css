@@ -2,16 +2,27 @@
 
 @layer base {
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     background-color: #06090e;
   }
-  
+
   .font-mono {
-    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family:
+      "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      monospace;
   }
 
-  .font-code, .hero-code-snippet {
-    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  .font-code,
+  .hero-code-snippet {
+    font-family:
+      "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      monospace;
   }
 }
 
@@ -20,17 +31,43 @@
   background-color: #06090e;
   background-image:
     /* Hero cyan core illumination behind main text & floating code cards */
-    radial-gradient(ellipse 950px 650px at 50% 12%, rgba(0, 242, 254, 0.08) 0%, rgba(0, 242, 254, 0.03) 45%, transparent 70%),
+    radial-gradient(
+      ellipse 950px 650px at 50% 12%,
+      rgba(0, 242, 254, 0.08) 0%,
+      rgba(0, 242, 254, 0.03) 45%,
+      transparent 70%
+    ),
     /* Secondary top-right cyan glow behind floating code snippet */
-    radial-gradient(ellipse 700px 520px at 80% 18%, rgba(0, 242, 254, 0.06) 0%, transparent 65%),
+    radial-gradient(
+        ellipse 700px 520px at 80% 18%,
+        rgba(0, 242, 254, 0.06) 0%,
+        transparent 65%
+      ),
     /* Hero left soft emerald accent */
-    radial-gradient(ellipse 650px 480px at 15% 22%, rgba(16, 185, 129, 0.045) 0%, transparent 60%),
+    radial-gradient(
+        ellipse 650px 480px at 15% 22%,
+        rgba(16, 185, 129, 0.045) 0%,
+        transparent 60%
+      ),
     /* Mid-section deep midnight blue / slate transition */
-    radial-gradient(ellipse 1100px 850px at 50% 52%, rgba(15, 30, 48, 0.5) 0%, transparent 70%),
+    radial-gradient(
+        ellipse 1100px 850px at 50% 52%,
+        rgba(15, 30, 48, 0.5) 0%,
+        transparent 70%
+      ),
     /* Bottom right deep teal/cyan glow behind contact form */
-    radial-gradient(ellipse 750px 550px at 85% 88%, rgba(0, 242, 254, 0.055) 0%, rgba(16, 185, 129, 0.03) 40%, transparent 70%),
+    radial-gradient(
+        ellipse 750px 550px at 85% 88%,
+        rgba(0, 242, 254, 0.055) 0%,
+        rgba(16, 185, 129, 0.03) 40%,
+        transparent 70%
+      ),
     /* Bottom left subtle teal ambient corner */
-    radial-gradient(ellipse 650px 500px at 10% 92%, rgba(13, 148, 136, 0.04) 0%, transparent 65%),
+    radial-gradient(
+        ellipse 650px 500px at 10% 92%,
+        rgba(13, 148, 136, 0.04) 0%,
+        transparent 65%
+      ),
     /* Base radial structure: brightest dark slate in upper center, fading to midnight obsidian at edges */
     radial-gradient(circle at 50% 25%, #0e131b 0%, #0a0e14 55%, #06090e 100%);
   background-attachment: fixed;
@@ -39,7 +76,8 @@
 }
 
 @keyframes float-slow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -48,7 +86,8 @@
 }
 
 @keyframes float-reverse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -57,7 +96,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.35;
     transform: scale(1);
   }

@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { LayoutGrid, ExternalLink, Code2 } from 'lucide-react';
-import { FEATURED_PROJECTS } from '../data/portfolioData';
-import { Project } from '../types';
+import React from "react";
+import { motion } from "motion/react";
+import { LayoutGrid, ExternalLink, Code2 } from "lucide-react";
+import { FEATURED_PROJECTS } from "../data/portfolioData";
+import { Project } from "../types";
 
 interface FeaturedProjectsProps {
   onProjectClick: (project: Project) => void;
@@ -16,13 +16,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
   return (
     <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex items-center gap-3 mb-10"
         >
           <div className="text-cyan-400">
@@ -41,8 +40,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
               id={`project-card-${project.id}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.55, delay: idx * 0.12, ease: 'easeOut' }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.55,
+                delay: idx * 0.12,
+                ease: "easeOut",
+              }}
               className="bg-[#161b22] border border-cyan-500/20 rounded-xl p-6 sm:p-7 flex flex-col justify-between hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(0,242,254,0.12)] transition-all duration-300 group"
             >
               <div>
@@ -91,11 +94,9 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
                   <span>GitHub</span>
                 </button>
               </div>
-
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -1,22 +1,21 @@
-import React from 'react';
+import React from "react";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const heroEl = document.getElementById('hero');
+    const heroEl = document.getElementById("hero");
     if (heroEl) {
-      heroEl.scrollIntoView({ behavior: 'smooth' });
+      heroEl.scrollIntoView({ behavior: "smooth" });
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   return (
     <footer className="border-t border-cyan-500/10 bg-[#06090e]/75 backdrop-blur-md py-8 text-xs sm:text-sm text-slate-400">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        
         {/* Brand with Scroll-to-Top */}
         <a
           href="#hero"
@@ -51,9 +50,7 @@ export const Footer: React.FC = () => {
             LinkedIn
           </a>
         </div>
-
       </div>
     </footer>
   );
 };
-

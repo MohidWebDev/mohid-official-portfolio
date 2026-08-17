@@ -1,19 +1,18 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Briefcase } from 'lucide-react';
-import { EXPERIENCES } from '../data/portfolioData';
+import React from "react";
+import { motion } from "motion/react";
+import { Briefcase } from "lucide-react";
+import { EXPERIENCES } from "../data/portfolioData";
 
 export const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex items-center gap-3 mb-12"
         >
           <div className="text-cyan-400">
@@ -32,12 +31,12 @@ export const Experience: React.FC = () => {
               id={`experience-item-${exp.id}`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: idx * 0.15, ease: 'easeOut' }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: idx * 0.15, ease: "easeOut" }}
               className="relative group transition-all"
             >
               {/* Glowing Timeline Node */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 flex items-center justify-center">
+              <div className="absolute -left-7.75 sm:-left-9.75 top-1.5 flex items-center justify-center">
                 <span className="w-3.5 h-3.5 rounded-full bg-[#00f2fe] shadow-[0_0_12px_#00f2fe] ring-4 ring-cyan-500/20 group-hover:scale-125 transition-transform" />
               </div>
 
@@ -50,9 +49,13 @@ export const Experience: React.FC = () => {
 
                 {/* Company and Period */}
                 <div className="flex flex-wrap items-center gap-2 text-sm font-medium mb-3">
-                  <span className="text-[#00f2fe] font-semibold">{exp.company}</span>
+                  <span className="text-[#00f2fe] font-semibold">
+                    {exp.company}
+                  </span>
                   <span className="text-slate-500">|</span>
-                  <span className="text-slate-400 font-mono text-xs sm:text-sm">{exp.period}</span>
+                  <span className="text-slate-400 font-mono text-xs sm:text-sm">
+                    {exp.period}
+                  </span>
                 </div>
 
                 {/* Description */}
@@ -63,7 +66,6 @@ export const Experience: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
