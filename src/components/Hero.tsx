@@ -19,17 +19,17 @@ export const Hero: React.FC<HeroProps> = ({ onResumeClick }) => {
   const [copiedCard1, setCopiedCard1] = useState(false);
   const [copiedCard2, setCopiedCard2] = useState(false);
 
-  const codeSnippet1 = `const App = () => {
+  const codeSnippet1 = `const Hero: React.FC = () => {
   return (
-    <div className=>
-      Hello World
-    </div>
+    <h1 className=>
+      Full-Stack Dev
+    </h1>
   );
 };`;
 
-  const codeSnippet2 = `const express = require('express');
-const app = express();
-app.use(cors());`;
+  const codeSnippet2 = `const app = express();
+app.use(cors());
+mongoose.connect(MONGO_URI);`;
 
   const handleCopy = (text: string, cardIndex: number) => {
     navigator.clipboard.writeText(text);
@@ -169,18 +169,20 @@ app.use(cors());`;
               <pre className="font-code hero-code-snippet text-xs sm:text-sm leading-relaxed text-slate-300 overflow-x-auto">
                 <code className="font-code">
                   <span className="text-purple-400 font-semibold">const</span>{" "}
-                  <span className="text-amber-300">App</span> = () =&gt; &#123;
+                  <span className="text-amber-300">Hero</span>: React.FC = ()
+                  =&gt; &#123;
                   {"\n  "}
                   <span className="text-purple-400 font-semibold">
                     return
                   </span>{" "}
-                  ({"\n    "}&lt;<span className="text-pink-400">div</span>{" "}
+                  ({"\n    "}
+                  &lt;<span className="text-pink-400">h1</span>{" "}
                   <span className="text-cyan-400">className</span>=&gt;
                   {"\n      "}
                   <span className="text-slate-100 font-medium">
-                    Hello World
+                    Full-Stack Dev
                   </span>
-                  {"\n    "}&lt;/<span className="text-pink-400">div</span>&gt;
+                  {"\n    "}&lt;/<span className="text-pink-400">h1</span>&gt;
                   {"\n  "});
                   {"\n"}&#125;;
                 </code>
@@ -227,6 +229,8 @@ app.use(cors());`;
                   app = <span className="text-cyan-400">express</span>();
                   {"\n"}app.<span className="text-blue-400">use</span>(
                   <span className="text-cyan-400">cors</span>());
+                  {"\n"}mongoose.<span className="text-cyan-400">connect</span>(
+                  <span className="text-emerald-400">MONGO_URI</span>);
                 </code>
               </pre>
             </motion.div>
