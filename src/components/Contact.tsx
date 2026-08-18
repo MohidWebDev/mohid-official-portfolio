@@ -9,6 +9,7 @@ import {
   CheckCircle,
   Copy,
   Check,
+  AlertCircle,
 } from "lucide-react";
 import { SiReact, SiNodedotjs, SiMongodb, SiTypescript } from "react-icons/si";
 import { ContactFormState } from "../types";
@@ -36,6 +37,7 @@ export const Contact: React.FC = () => {
 
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
@@ -80,17 +82,43 @@ export const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
 
     setLoading(true);
-    setTimeout(() => {
+    setErrorMsg("");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setErrorMsg(
+          "Something went wrong. Please try again or email me directly.",
+        );
+        console.error("Web3Forms error:", result);
+      }
+    } catch (err) {
+      setErrorMsg(
+        "Couldn't send your message. Check your connection and try again.",
+      );
+      console.error("Submission failed:", err);
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-      setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 800);
+    }
   };
 
   const handleCopyEmail = () => {
@@ -300,6 +328,14 @@ export const Contact: React.FC = () => {
                       className="w-full bg-[#0d1117] border border-slate-700/80 rounded-md px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 text-sm transition-all resize-none"
                     />
                   </div>
+
+                  {/* Error Message */}
+                  {errorMsg && (
+                    <div className="flex items-center gap-2 py-3 px-4 bg-red-950/30 border border-red-500/30 rounded-lg text-red-400 text-sm animate-fadeIn">
+                      <AlertCircle size={16} className="shrink-0" />
+                      <span>{errorMsg}</span>
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <button
