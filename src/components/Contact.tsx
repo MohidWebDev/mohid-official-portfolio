@@ -232,7 +232,7 @@ export const Contact: React.FC = () => {
                 animate={{ opacity: 1, scale: 1.75 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className={currentPhraseData.color}
-                style={{ filter: `drop-shadow(0 0 12px currentColor)` }}
+                style={{ filter: `drop-shadow(0 0 34px currentColor)` }}
               >
                 <CurrentIcon size={40} />
               </motion.div>
