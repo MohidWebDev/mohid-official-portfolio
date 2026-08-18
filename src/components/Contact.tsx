@@ -225,14 +225,14 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Typing Status Line */}
-            <div className="flex-1 flex flex-col items-center justify-center gap-3 pt-14 text-slate-300 font-mono text-base sm:text-lg text-center">
+            <div className="flex-1 flex flex-col items-center justify-center gap-8 pt-10 text-slate-300 font-mono text-base sm:text-lg text-center">
               <motion.div
                 key={phraseIndex}
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                animate={{ opacity: 1, scale: 1.75 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className={currentPhraseData.color}
-                style={{ filter: `drop-shadow(0 0 20px currentColor)` }}
+                style={{ filter: `drop-shadow(0 0 6px currentColor)` }}
               >
                 <CurrentIcon size={40} />
               </motion.div>
