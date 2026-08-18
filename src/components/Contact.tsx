@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import {
   Mail,
@@ -10,6 +10,7 @@ import {
   Copy,
   Check,
 } from "lucide-react";
+import { SiReact, SiNodedotjs, SiMongodb, SiTypescript } from "react-icons/si";
 import { ContactFormState } from "../types";
 
 export const Contact: React.FC = () => {
@@ -21,6 +22,54 @@ export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const TYPING_PHRASES = [
+    { text: "Building with React", icon: SiReact, color: "text-cyan-400" },
+    { text: "Powered by Node.js", icon: SiNodedotjs, color: "text-green-400" },
+    { text: "Backed by MongoDB", icon: SiMongodb, color: "text-emerald-400" },
+    {
+      text: "Styled with TypeScript",
+      icon: SiTypescript,
+      color: "text-blue-400",
+    },
+  ];
+
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = TYPING_PHRASES[phraseIndex].text;
+    const typingSpeed = isDeleting ? 35 : 55;
+    const pauseBeforeDelete = 1400;
+    const pauseBeforeNext = 300;
+
+    if (!isDeleting && displayText === currentPhrase) {
+      const pause = setTimeout(() => setIsDeleting(true), pauseBeforeDelete);
+      return () => clearTimeout(pause);
+    }
+
+    if (isDeleting && displayText === "") {
+      const next = setTimeout(() => {
+        setIsDeleting(false);
+        setPhraseIndex((prev) => (prev + 1) % TYPING_PHRASES.length);
+      }, pauseBeforeNext);
+      return () => clearTimeout(next);
+    }
+
+    const timeout = setTimeout(() => {
+      setDisplayText((prev) =>
+        isDeleting
+          ? currentPhrase.slice(0, prev.length - 1)
+          : currentPhrase.slice(0, prev.length + 1),
+      );
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, phraseIndex]);
+
+  const currentPhraseData = TYPING_PHRASES[phraseIndex];
+  const CurrentIcon = currentPhraseData.icon;
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -145,6 +194,24 @@ export const Contact: React.FC = () => {
               >
                 <Linkedin size={19} />
               </a>
+            </div>
+
+            {/* Typing Status Line */}
+            <div className="flex-1 flex flex-col items-center justify-center gap-3 pt-14 text-slate-300 font-mono text-base sm:text-lg text-center">
+              <motion.div
+                key={phraseIndex}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className={currentPhraseData.color}
+                style={{ filter: `drop-shadow(0 0 20px currentColor)` }}
+              >
+                <CurrentIcon size={40} />
+              </motion.div>
+              <span>
+                {displayText}
+                <span className="inline-block w-0.5 h-5 bg-cyan-400 ml-0.5 animate-pulse" />
+              </span>
             </div>
           </motion.div>
 
