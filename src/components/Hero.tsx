@@ -2,16 +2,13 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import {
   FolderGit2,
-  ArrowRight,
   Code2,
   Briefcase,
   Check,
   Copy,
-  Terminal,
 } from "lucide-react";
 
 interface HeroProps {
-  onOpenSnippetModal?: () => void;
   onResumeClick: () => void;
 }
 
