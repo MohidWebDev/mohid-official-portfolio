@@ -11,12 +11,10 @@ import { FeaturedProjects } from "./components/FeaturedProjects";
 import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { ResumeModal } from "./components/ResumeModal";
 import { ProjectModal } from "./components/ProjectModal";
 import { Project } from "./types";
 
 export default function App() {
-  const [resumeOpen, setResumeOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [modalMode, setModalMode] = useState<"demo" | "github">("demo");
 
@@ -30,15 +28,19 @@ export default function App() {
     setModalMode("github");
   };
 
+  const handleResumeClick = () => {
+    window.open("/resume.pdf", "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="min-h-screen portfolio-ambient-bg text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* Sticky Navigation Bar */}
-      <Navbar onResumeClick={() => setResumeOpen(true)} />
+      <Navbar onResumeClick={handleResumeClick} />
 
       {/* Main Content Sections */}
       <main>
         {/* 1. Hero Section */}
-        <Hero onResumeClick={() => setResumeOpen(true)} />
+        <Hero onResumeClick={handleResumeClick} />
 
         {/* 2. Technology Stack Section */}
         <TechStack />
@@ -60,7 +62,6 @@ export default function App() {
       <Footer />
 
       {/* Modals & Overlays */}
-      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
 
       <ProjectModal
         project={selectedProject}
