@@ -1,18 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import {
-  FolderGit2,
-  Code2,
-  Briefcase,
-  Check,
-  Copy,
-} from "lucide-react";
+import { FolderGit2, Code2, Briefcase, Check, Copy } from "lucide-react";
 
-interface HeroProps {
-  onResumeClick: () => void;
-}
-
-export const Hero: React.FC<HeroProps> = ({ onResumeClick }) => {
+export const Hero: React.FC = () => {
   const [copiedCard1, setCopiedCard1] = useState(false);
   const [copiedCard2, setCopiedCard2] = useState(false);
 

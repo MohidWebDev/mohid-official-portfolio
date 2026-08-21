@@ -25,7 +25,7 @@ export default function App() {
       {/* Main Content Sections */}
       <main>
         {/* 1. Hero Section */}
-        <Hero onResumeClick={handleResumeClick} />
+        <Hero />
 
         {/* 2. Technology Stack Section */}
         <TechStack />
