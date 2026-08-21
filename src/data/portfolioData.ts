@@ -48,34 +48,24 @@ export const TECH_CATEGORIES: TechCategory[] = [
 
 export const FEATURED_PROJECTS: Project[] = [
   {
-    id: "nexus-cloud",
-    title: "Nexus Cloud Platform",
+    id: "mediscan",
+    title: "MediScan",
     description:
-      "A scalable microservices orchestration platform designed for high-availability enterprise environments.",
-    tags: ["React", "Node.js", "AWS"],
-    liveUrl: "https://demo.architect.io/nexus",
-    githubUrl: "https://github.com/architect/nexus-cloud",
-    metrics: "99.99% uptime, 10M+ daily events processed",
+      "A machine learning-powered decision-support tool that predicts likely medical conditions from symptoms — submitted as text, a scanned image, or a PDF report — using OCR and NLP.",
+    tags: ["Python", "Flask", "scikit-learn", "NLTK", "Tesseract OCR"],
+    liveUrl: "https://mediscan-y531.onrender.com",
+    githubUrl: "https://github.com/MohidWebDev/MediScan",
+    metrics: "Predicts across 20 common conditions with confidence scoring",
   },
   {
-    id: "quantum-ecommerce",
-    title: "Quantum E-Commerce",
+    id: "movies-crud-app",
+    title: "Movies CRUD App",
     description:
-      "High-performance headless e-commerce solution with sub-second page loads and real-time inventory.",
-    tags: ["Next.js", "GraphQL", "PostgreSQL"],
-    liveUrl: "https://demo.architect.io/quantum",
-    githubUrl: "https://github.com/architect/quantum-ecommerce",
-    metrics: "350ms p95 latency, 45k concurrent users",
-  },
-  {
-    id: "aegis-security",
-    title: "Aegis Security Tool",
-    description:
-      "Automated vulnerability scanner and monitoring dashboard for modern web applications.",
-    tags: ["Python", "Vue.js", "Docker"],
-    liveUrl: "https://demo.architect.io/aegis",
-    githubUrl: "https://github.com/architect/aegis-security",
-    metrics: "Detected 12k+ CVEs across 500+ microservices",
+      "A full-stack movie management app with a REST API backend and a React frontend — browse, search, add, edit, and delete movies with poster uploads.",
+    tags: ["React", "TypeScript", "Node.js", "Express", "MongoDB"],
+    liveUrl: "https://movies-crud-frontend.onrender.com",
+    githubUrl: "https://github.com/MohidWebDev/movies-crud-frontend",
+    metrics: "Full CRUD with image uploads, validation, and rate limiting",
   },
 ];
 
