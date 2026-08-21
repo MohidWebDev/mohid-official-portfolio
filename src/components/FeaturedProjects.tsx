@@ -4,15 +4,7 @@ import { LayoutGrid, ExternalLink, Code2 } from "lucide-react";
 import { FEATURED_PROJECTS } from "../data/portfolioData";
 import { Project } from "../types";
 
-interface FeaturedProjectsProps {
-  onProjectClick: (project: Project) => void;
-  onGithubClick: (project: Project) => void;
-}
-
-export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
-  onProjectClick,
-  onGithubClick,
-}) => {
+export const FeaturedProjects: React.FC = () => {
   return (
     <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
@@ -75,24 +67,30 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
               {/* Action Buttons */}
               <div className="flex items-center gap-3 pt-2">
                 {/* Live Demo CTA */}
-                <button
-                  onClick={() => onProjectClick(project)}
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   id={`live-demo-btn-${project.id}`}
                   className="flex-1 border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 hover:shadow-[0_0_12px_rgba(0,242,254,0.2)] py-2 px-3 rounded text-xs sm:text-sm font-medium flex items-center justify-center gap-1.5 transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
                 >
                   <ExternalLink size={14} className="stroke-[2.2]" />
+
                   <span>Live Demo</span>
-                </button>
+                </a>
 
                 {/* GitHub CTA */}
-                <button
-                  onClick={() => onGithubClick(project)}
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   id={`github-btn-${project.id}`}
                   className="flex-1 border border-slate-700 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/40 py-2 px-3 rounded text-xs sm:text-sm font-medium flex items-center justify-center gap-1.5 transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
                 >
                   <Code2 size={14} className="stroke-[2.2]" />
+
                   <span>GitHub</span>
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
